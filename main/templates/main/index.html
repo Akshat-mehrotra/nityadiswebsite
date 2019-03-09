@@ -90,13 +90,11 @@
         {% for piece in art %}
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-block-image">
-            <figure><img src="{{ piece.picture.url }}" alt="Free Bootstrap Template by uicookies.com"></figure>
+            <figure><img src="{{ piece.cropped.url }}" alt="Free Bootstrap Template by uicookies.com"></figure>
             <div class="text">
               <h3 class="mb30"><a href="{% url 'main:buy' piece.pk %}">{{piece.name}}</a></h3>
               <p class="dark">{{piece.description}}</p>
-              <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
-              <hr>
-              <p class="clearfix like"><a class="pull-left" href="#"><i class="icon-thumbs-up"></i> 19,552</a> <a class="pull-right" href="#"><i class="icon-thumbs-down"></i> 7</a></p>
+  
             </div>
           </div>
         </div>

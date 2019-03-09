@@ -1,9 +1,11 @@
 from django.contrib import admin
 
 from .models import Commission, Art
+from image_cropping import ImageCroppingMixin
+
 
 @admin.register(Commission)
-class AuthorAdmin(admin.ModelAdmin):
+class CommissionAdmin(admin.ModelAdmin):
     date_hierarchy = 'pub_date'
     search_fields = ['name', 'pub_date', 'email', 'sub_date']
     list_filter = ('done',)
@@ -21,10 +23,11 @@ class AuthorAdmin(admin.ModelAdmin):
     ]
 
 @admin.register(Art)
-class AuthorAdmin(admin.ModelAdmin):
+class ArtAdmin(ImageCroppingMixin, admin.ModelAdmin):
     date_hierarchy = 'pub_date'
     search_fields = ['first_name', 'last_name', 'pub_date']
     list_display = ('name', 'pub_date')
+    exclude = ('cropped',)
 
 # Register your models here
 admin.site.site_header = "NITYA's BITCH ASS Admin"

@@ -5,7 +5,6 @@ from django.conf.urls.static import static
 from .views import (
                     buy,
                     home,
-                    upload_art,
                     art,
                     about,
                     getit,)
@@ -17,7 +16,6 @@ urlpatterns = [
     path('purchase/<int:pk>', buy, name="buy"),
     path('artwork', art, name="art"),
     path('getit/<int:pk>', getit, name='getit'),
-    path('upload_art', upload_art, name="upload_art"),
     path('about', about, name='about')
 ]
 

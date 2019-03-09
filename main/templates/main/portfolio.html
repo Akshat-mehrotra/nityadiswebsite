@@ -28,7 +28,7 @@
         {% for piece in art %}
         <div class="col-md-4 col-sm-6">
           <a href="{% url 'main:buy' piece.pk %}" class="probootstrap-hover-overlay">
-            <img src="{{piece.picture.url}}" alt="{{piece.name}}" class="img-responsive">
+            <img src="{{piece.cropped.url}}" alt="{{piece.name}}" class="img-responsive">
             <div class="probootstrap-text-overlay">
               <h3>{{piece.name}}</h3>
             </div>

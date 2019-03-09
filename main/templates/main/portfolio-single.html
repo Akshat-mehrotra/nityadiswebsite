@@ -48,9 +48,15 @@
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#formModal">Customize</button>
         </p>
       </div>
-      <div class="col-md-9 col-md-pull-3">
-        <p><a href="{% static '{{art.picture.url}}' %}" class="image-popup"><img src="{{art.picture.url}}" alt="{{art.name}}" class="img-responsive"></a></p>
 
+      <div class="col-md-9 col-md-pull-3">
+        <p><a href="{{art.picture.url}}" class="image-popup"><img src="{{art.picture.url}}" alt="{{art.name}}" class="img-responsive"></a></p>
+        {% if arts %}
+        {% for i in arts %}
+        <p><a href="{{i.url}}" class="image-popup"><img src="{{i.url}}" alt="{{art.name}}" class="img-responsive"></a></p>
+
+        {% endfor %}
+        {% endif %}
     </div>
 
   </section>
