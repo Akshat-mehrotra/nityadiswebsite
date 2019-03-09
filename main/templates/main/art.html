@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+{% for i in art%}
+<a href="{% url 'main:buy' i.pk %}"><img src="{{i.picture.url}}" alt="artwork here"> </a>
+{% endfor %}
+{% endblock %}

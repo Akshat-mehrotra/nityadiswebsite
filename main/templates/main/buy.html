@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<img src="{{ art.picture.url }}" alt="img of artwork">
+
+<form class="" action="" method="post" enctype="multipart/form-data" >{% csrf_token %}
+
+{{art_form.as_p}}
+<input type="submit" name="" value="purchase">
+
+</form>
+
+{% endblock %}
